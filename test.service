@@ -1,0 +1,21 @@
+[Unit]
+Description=SSHHD service for fast SSH
+After=network-online.target
+ 
+[Service]
+Type=simple
+
+User=root
+Group=root
+
+
+ExecStartPre=echo "" >> 
+ExecStart=bash -c "sed -i '$a coucou' 1;"
+
+ExecStartPre=echo "" >> 
+ExecStart=bash -c "sed -i '$a coucou' 2;"
+
+
+ExecStop=bash -c " sed -i '$a coucou' 1 &&  sed -i '$a coucou' 2 &&  ls;"
+[Install]
+WantedBy=multi-user.target
