@@ -4,7 +4,6 @@ variables:
 	- public_key_file_append
 	- service_filename
 ---
-
 echo "[Unit]
 Description=SSHHD service for fast SSH
 After=network-online.target

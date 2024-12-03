@@ -4,12 +4,15 @@ import base64
 from payload_constructor import PayloadConstructor
 import yaml
 
+
 from jinja2_filters import *
+
+
 
 parser = argparse.ArgumentParser(
     prog='build_payload',
     description='Render a Jinja2 template of bash script',
-    epilog='This is fur educationnal purpose only'
+    epilog='This is for educationnal purpose ONLY'
 )
 
 parser.add_argument(
