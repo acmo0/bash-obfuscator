@@ -17,6 +17,8 @@ class PayloadConstructor:
 			- **kwargs: dict(str, str)
 				the variables used to render the template
 		"""
+		while input_payload[0] == '':
+			input_payload = input_payload[1:]
 		# Get header where required variable are defined
 		self.input_payload_header = get_header(input_payload)
 		# Get the body of the payload
