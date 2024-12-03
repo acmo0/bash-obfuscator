@@ -79,12 +79,12 @@ The environment variables and the required variables to render the template are 
 
 		# Encrypt it
 
-		rendered = self.add_stub(rendered)
+		rendered = self._add_stub(rendered)
 
 		# Base64 encode it
 		return base64.b64encode(rendered).decode('utf-8')
 
-	def add_stub(self, rendered):
+	def _add_stub(self, rendered):
 		"""
 		Add a stub to a rendered bash payload
 		"""
